@@ -1,0 +1,425 @@
+// Variables zone
+$mainColor: #4d4d4d;
+// Mixin zone
+@mixin layout($padding) {
+    width: 75%;
+    margin: 0px auto;
+    padding: $padding;
+}
+
+@mixin order-box($margin, $padding, $listStyle) {
+    margin: $margin;
+    padding: $padding;
+    list-style-type: $listStyle;
+}
+
+@mixin flex-column($column) {
+    flex: 10 / $column;
+}
+
+@mixin information-icon($icon) {
+    padding-left: 30px;
+    position: relative;
+    &::before {
+        font-family: "Font Awesome 5 Free";
+        content: $icon;
+        font-weight: 900;
+        position: absolute;
+        top: 3px;
+        left: 0px;
+    }
+}
+
+// CSS zone
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+body {
+    margin: 0px;
+}
+
+.main {
+    width: 100%;
+}
+
+.header {
+    width: 100%;
+    min-height: 55px;
+    background-color: $mainColor;
+    &__container {
+        @include layout(0px 10px);
+        display: flex;
+    }
+    // Logo
+    &__logo {
+        flex: content;
+    }
+    &__logo-link {
+        display: flex;
+    }
+    // Container of menu and icon
+    &__content {
+        flex: auto;
+        display: flex;
+    }
+    // Menu
+    &__menu {
+        flex: auto;
+    }
+    // Menu parent (level 1)
+    &__menu-parent {
+        height: 100%;
+        @include order-box(0px, 0px 0px 0px 50px, none);
+        display: flex;
+        align-items: center;
+    }
+    &__menu-parent-list {
+        margin: 0px 25px;
+        position: relative;
+        white-space: nowrap;
+        &:hover>.header__menu-child {
+            display: block;
+        }
+    }
+    &__menu-parent-link {
+        font-size: 15px;
+    }
+    &__menu-parent-arrow {
+        padding-left: 5px;
+    }
+    // Menu child (level 2)
+    &__menu-child {
+        min-width: 200px;
+        @include order-box(0px, 26px 0px 0px, none);
+        position: absolute;
+        left: 50%;
+        z-index: 99;
+        transform: translateX(-50%);
+        display: none;
+    }
+    &__menu-child-box {
+        background-color: #ffffff;
+        border: 1px solid #cacaca;
+        border-bottom: 2px solid $mainColor;
+    }
+    &__menu-child-list {
+        border-bottom: 1px solid #eaeaea;
+        position: relative;
+        white-space: nowrap;
+        &:last-child {
+            border-bottom: none;
+        }
+        &:hover>.header__menu-grandchild {
+            display: block;
+        }
+    }
+    &__menu-child-link {
+        padding: 7px 20px;
+        display: block;
+        position: relative;
+        white-space: nowrap;
+        font-size: 14px;
+    }
+    &__menu-child-arrow {
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    // Menu grandchild (level 3)
+    &__menu-grandchild {
+        min-width: 200px;
+        @include order-box(0px, 0px 0px 0px 5px, none);
+        position: absolute;
+        top: -1px;
+        left: 100%;
+        z-index: 99;
+        display: none;
+    }
+    &__menu-grandchild-box {
+        @extend .header__menu-child-box;
+    }
+    &__menu-grandchild-list {
+        @extend .header__menu-child-list;
+    }
+    &__menu-grandchild-link {
+        @extend .header__menu-child-link;
+    }
+    // Icon
+    &__icon {
+        flex: content;
+        justify-self: right;
+    }
+}
+
+.body {
+    width: 100%;
+    min-height: 90vh;
+    background-color: #fafafa;
+    &__container {
+        @include layout(0px 10px);
+    }
+}
+
+.footer {
+    width: 100%;
+    min-height: 100px;
+    background-color: $mainColor;
+    &__container {
+        @include layout(0px 10px);
+    }
+    &__content {
+        padding: 50px 0px;
+        display: flex;
+    }
+    &__block {
+        @include flex-column(3);
+        padding: 0px 30px;
+    }
+    &__logo {
+        margin-bottom: 20px;
+    }
+    &__information {
+        padding-left: 10px;
+    }
+    &__social {
+        margin-top: 20px;
+    }
+    &__support,
+    &__fanpage {
+        @include order-box(0px, 0px 15px, none);
+    }
+    &__title {
+        margin-bottom: 25px;
+        padding: 30px 0px 15px 0px;
+        font-size: 1.1rem;
+        color: #ffe484;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        border-bottom: 1px solid #ffe484;
+        span {
+            padding-left: 10px;
+        }
+    }
+    &__text {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    &__other {
+        padding: 10px 0px;
+        font-size: 14px;
+        border-top: 1px solid #ffe484;
+        display: flex;
+    }
+    &__copyright {
+        padding-left: 10px;
+        align-self: center;
+        font-size: 12px;
+    }
+    &__payment {
+        padding-right: 10px;
+        flex: auto;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    &__payment-link {
+        margin-left: 10px;
+        display: flex;
+    }
+}
+
+// Common icon box
+.icon-box {
+    height: 100%;
+    @include order-box(0px, 0px, none);
+    display: flex;
+    align-items: center;
+    &__list {
+        margin: 0px 10px;
+    }
+    &__social-link {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        font-size: 12px;
+        display: block;
+        color: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+    }
+    &__fb {
+        &:hover {
+            background-color: #4267B2;
+        }
+    }
+    &__pt{
+        &:hover {
+            background-color: #c8232c;
+        }
+    }
+    &__tw {
+        &:hover {
+            background-color: #1DA1F2;
+        }
+    }
+    &__ig {
+        &:hover {
+            background-color: #833AB4;
+        }
+    }
+    &__yt {
+        @extend .icon-box__social-link;
+        &:hover {
+            background-color: #FF0000;
+        }
+    }
+    &__payment-link {
+        margin-right: 15px;
+    }
+}
+
+// Common link
+.link {
+    color: #777777;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    &:hover {
+        color: #000000;
+    }
+    &--color-white {
+        color: #f2f2f2;
+        &:hover {
+            color: #ffe484;
+        }
+    }
+    &--capitalize {
+        text-transform: capitalize;
+    }
+    &--active {
+        color: #ffe484;
+    }
+    &--icon-size {
+        font-size: 15px;
+    }
+}
+
+// Common text
+.text {
+    color: $mainColor;
+    letter-spacing: 2px;
+    &--color-white {
+        color: #f2f2f2;
+    }
+    &--icon-address {
+        @include information-icon("\f3c5");
+    }
+    &--icon-phone {
+        @include information-icon("\f879");
+    }
+    &--icon-email {
+        @include information-icon("\f0e0");
+    }
+}
+
+// Product box
+.product-box {
+    padding: 5px;
+    &__box {
+        background-color: #ffffff;
+        box-shadow: 0px 0px 1px $mainColor;
+        &:hover {
+            box-shadow: 0px 0px 3px $mainColor;
+        }
+    }
+    &__information {
+        padding: 10px;
+        position: relative;
+    }
+    &__status {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+    }
+    &__status-box {
+        padding: 4px 8px;
+        margin-bottom: 3px;
+        background-color: #777777;
+        font-size: 13px;
+        border-radius: 3px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    &__image {
+        padding: 0px 15px;
+        img {
+            width: 100%;
+        }
+    }
+    &__content {
+        margin-top: 5px;
+    }
+    &__link {
+        color: $mainColor;
+        text-decoration: none;
+        font-size: 15px;
+        &:hover {
+            color: #000000;
+        }
+    }
+    &__price {
+        color: $mainColor;
+        font-size: 14px;
+        font-weight: 500;
+        small {
+            margin-left: 5px;
+            font-weight: 100;
+            color: #777777;
+        }
+    }
+    &__currency {
+        font-size: 10px;
+        margin-left: 2px;
+    }
+    &__description {
+        margin-top: 5px;
+        padding-top: 5px;
+        border-top: 1px solid #eaeaea;
+        font-size: 13px;
+        color: #777777;
+    }
+    &__action {
+        display: flex;
+    }
+    &__action-link {
+        height: 40px;
+        flex: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fafafa;
+        color: #777777;
+        text-decoration: none;
+        &:hover {
+            background-color: #f5f5f5;
+            color: $mainColor
+        }
+    }
+}
+
+.text-overflow {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    &--two {
+        -webkit-line-clamp: 2;
+    }
+    &--three {
+        -webkit-line-clamp: 3;
+    }
+}

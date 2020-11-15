@@ -1,5 +1,214 @@
-<!DOCTYPE>
-<html>
-	<head></head>
-	<body></body>
-</html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="css/template/template.css" />
+    <link rel="stylesheet" href="css/index/index.css">
+    <link rel="stylesheet" href="css/font-awesome-all.min.css" />
+</head>
+
+<body>
+    <main class="main">
+        <header class="header">
+            <div class="header__container">
+                <div class="header__logo">
+                    <a class="header__logo-link" href="index.html">
+                        <!-- Render logo from template.js -->
+                        <img class="shop-logo" src="" alt="" />
+                    </a>
+                </div>
+                <div class="header__content">
+                    <div class="header__menu">
+                        <!-- Render menu from template.js -->
+                    </div>
+                    <div class="header__icon">
+                        <ul class="icon-box">
+                            <li class="icon-box__list">
+                                <a class="link link--icon-size link--color-white" href="#">
+                                    <i class="fas fa-search"></i>
+                                </a>
+                            </li>
+                            <li class="icon-box__list">
+                                <a class="link link--icon-size link--color-white" href="#">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </a>
+                            </li>
+                            <li class="icon-box__list">
+                                <a class="link link--icon-size link--color-white" href="#">
+                                    <i class="fas fa-user"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Body start -->
+        <section class="body">
+            <div class="body__container">
+                <!-- Block A : Slideshow contains Brand list & Advertisement slide -->
+                <div class="slideshow">
+                    <div>
+                        <div class="slideshow__brand-header">
+                            <div class="slideshow__brand-icon">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="slideshow__brand-title">brands</div>
+                        </div>
+                        <ul class="slideshow__brand-box">
+                            <!-- Render brand list from index.js -->
+                        </ul>
+                    </div>
+                    <div class="slideshow__slide">
+                        <div id="slideshow-slide-box" class="slideshow__slide-box">
+                            <!-- Render advertisement images from index.js -->
+                        </div>
+                        <div id="slideshow-slide-counter" class="slideshow__slide-counter">
+                            <!-- Render advertisement numbers from index.js -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Block B : Latest products -->
+                <div class="product">
+                    <div id="product-header" class="product__header">
+                        <div class="text text--color-white product__title">Latest Products</div>
+                        <!-- Render buton box from index.js -->
+                    </div>
+                    <div id="product-body" class="product__body product__body--drag">
+                        <div id="product-roller" class="product__roller">
+                            <!-- Render product boxes from index.js -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Block C : Phone by brands -->
+                <div class="product">
+                    <div class="product__header">
+                        <div class="text text--color-white product__title">Products</div>
+                        <div class="product__filter">
+                            <!-- Render form select from index.js -->
+                        </div>
+                    </div>
+                    <div class="product__body">
+                        <div class="product__layout">
+                            <!-- Render product boxes from index.js -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Body end -->
+        <footer class="footer">
+            <div class="footer__container">
+                <div class="footer__content">
+                    <div class="footer__block">
+                        <div class="footer__logo">
+                            <a href="index.html">
+                                <!-- Render logo from template.js -->
+                                <img class="shop-logo" src="" alt="" />
+                            </a>
+                        </div>
+                        <div class="footer__information">
+                            <div class="footer__text text text--color-white text--icon-address">
+                                <!-- Render address from template.js -->
+                                <a class="shop-address link link--color-white" href=""></a>
+                            </div>
+                            <div class="footer__text text--color-white text--icon-phone">
+                                <!-- Render phone from template.js -->
+                                <a class="shop-phone link link--color-white" href=""></a>
+                            </div>
+                            <div class="footer__text text--color-white text--icon-email">
+                                <!-- Render email from template.js -->
+                                <a class="shop-email link link--color-white" href=""></a>
+                            </div>
+                        </div>
+                        <div class="footer__social">
+                            <!-- Render social icon from template.js -->
+                            <ul class="icon-box">
+                                <li>
+                                    <a class="social-facebook icon-box__social-link icon-box__fb" href=""></a>
+                                </li>
+                                <li>
+                                    <a class="social-pinterest icon-box__social-link icon-box__pt" href=""></a>
+                                </li>
+                                <li>
+                                    <a class="social-twitter icon-box__social-link icon-box__tw" href=""></a>
+                                </li>
+                                <li>
+                                    <a class="social-instagram icon-box__social-link icon-box__ig" href=""></a>
+                                </li>
+                                <li>
+                                    <a class="social-youtube icon-box__social-link icon-box__yt" href=""></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer__block">
+                        <div class="footer__title">
+                            <span>support</span>
+                        </div>
+                        <ul class="footer__support">
+                            <li class="footer__text">
+                                <a class="link link--color-white link--capitalize" href="#">services</a>
+                            </li>
+                            <li class="footer__text">
+                                <a class="link link--color-white link--capitalize" href="#">deliveries</a>
+                            </li>
+                            <li class="footer__text">
+                                <a class="link link--color-white link--capitalize" href="#">privacy policy</a>
+                            </li>
+                            <li class="footer__text">
+                                <a class="link link--color-white link--capitalize" href="#">refunds & returns</a>
+                            </li>
+                            <li class="footer__text">
+                                <a class="link link--color-white link--capitalize" href="#">helps & faq's</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__block">
+                        <div class="footer__title">
+                            <span>fanpage</span>
+                        </div>
+                        <div class="footer__fanpage"></div>
+                    </div>
+                </div>
+                <div class="footer__other">
+                    <div class="footer__copyright">
+                        <span class="text text--color-white">Copyright Powered by</span>
+                        <!-- Render name from template.js -->
+                        <a class="shop-name link link--color-white" href=""></a>
+                    </div>
+                    <div class="footer__payment">
+                        <div>
+                            <a class="footer__payment-link" href="#" title="Paypal">
+                                <img src="img/payment/paypal.png" alt="Paypal">
+                            </a>
+                        </div>
+                        <div>
+                            <a class="footer__payment-link" href="#" title="Master">
+                                <img src="img/payment/master.png" alt="Master">
+                            </a>
+                        </div>
+                        <div>
+                            <a class="footer__payment-link" href="#" title="Visa">
+                                <img src="img/payment/visa.png" alt="Visa">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="js/data/general-data.js"></script>
+    <script src="js/data/banner-data.js"></script>
+    <script src="js/data/brand-data.js"></script>
+    <script src="js/data/product-data.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

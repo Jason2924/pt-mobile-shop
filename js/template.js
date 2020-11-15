@@ -1,9 +1,21 @@
 window.onload = loadData();
 
 function loadData() {
+    loadPage();
     loadMenuData();
     loadShopData();
     loadSocialData();
+}
+
+function loadPage() {
+    let loading = setTimeout(showPage, 5000);
+
+    function showPage() {
+        const loader = document.querySelector(".loader");
+        const main = document.querySelector(".main");
+        loader.style.display = "none";
+        main.style.visibility = "visible";
+    }
 }
 
 function loadMenuData() {

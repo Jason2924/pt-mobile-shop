@@ -1,0 +1,169 @@
+@import "../template/template";
+// Block A : Slideshow
+.slideshow {
+    padding: 10px 0px;
+    display: grid;
+    grid-template-columns: 280px auto;
+    &__brand-header {
+        padding: 7px 10px;
+        background-color: $mainColor;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+    }
+    &__brand-icon {
+        margin: 0px 15px 0px 5px;
+        div {
+            width: 35px;
+            height: 1px;
+            margin: 6px auto;
+            background-color: #ffffff;
+        }
+        div:nth-child(1), div:nth-child(3) {
+            width: 25px;
+        }
+    }
+    &__brand-title {
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+    }
+    &__brand-box {
+        max-height: calc((10 * 40px) - 1px);
+        @include order-box(0px, 0px 20px, none);
+        background-color: #ffffff;
+        overflow-y: scroll;
+        box-shadow: 0px 1px 2px #eaeaea;
+    }
+    &__brand-list {
+        border-bottom: 1px solid #eaeaea;
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+    &__brand-link {
+        padding: 10px 0px 10px 10px;
+        font-size: 14px;
+        display: block;
+    }
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+    ::-webkit-scrollbar-track {
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #eaeaea; 
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #cccccc;
+    }
+    &__slide {
+        margin-left: 10px;
+        position: relative;
+    }
+    &__slide-box {
+        .active {
+            display: block;
+            animation: displayImage 1000ms ease-in-out;
+        }
+        @keyframes displayImage {
+            0% {display: none; opacity: 0.4;}
+            1% {display: block; opacity: 0.4;}
+            100% {display: block; opacity: 1;}
+        }
+    }
+    &__slide-item {
+        display: none;
+        img {
+            width: 100%;
+            cursor: pointer;
+        }
+    }
+    &__slide-counter {
+        position: absolute;
+        right: 15px;
+        bottom: 15px;
+        display: flex;
+        align-items: center;
+        .active {
+            font-size: 25px;
+            color: #ffffff;
+            text-shadow: 0px 0px 5px #eaeaea;
+        }
+    }
+    &__slide-number {
+        margin: 0px 5px;
+        color: #eaeaea;
+        font-size: 17px;
+        text-shadow: 0px 0px 3px #eaeaea;
+        cursor: pointer;
+    }
+}
+
+// Block B : Latest product
+.product {
+    padding: 10px 0px;
+    &__header {
+        background-color: #ffffff;
+        display: flex;
+        border-top: 2px solid $mainColor;
+        box-shadow: 0px 1px 2px #eaeaea;
+        position: relative;
+    }
+    &__title {
+        padding: 8px 15px;
+        background-color: $mainColor;
+        font-size: 15px;
+        letter-spacing: 0.5px;
+    }
+    &__button-box {
+        height: 100%;
+        position: absolute;
+        right: 0px;
+        display: flex;
+    }
+    &__button-left, &__button-right {
+        width: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #777777;
+        font-size: 13px;
+        transition: background-color 500ms ease-in-out;
+        cursor: pointer;
+        &:hover {
+            background-color: $mainColor;
+            color: #f2f2f2;
+        }
+    }
+    &__body {
+        margin-top: 10px;
+        &--drag {
+            overflow: hidden;
+            &:active {
+                cursor: pointer;
+                user-select: none;
+            }
+        }
+    }
+    &__roller {
+        display: -webkit-inline-box;
+    }
+    &__layout {
+        display: grid;
+        grid-template-columns: calc(100%/5) calc(100%/5) calc(100%/5) calc(100%/5) calc(100%/5);
+    }
+    &__filter {
+        margin-left: auto;
+        &-form {
+            height: 100%;
+            display: flex;
+            select {
+                padding: 0px 15px 0px 10px;
+                border: none;
+                outline: none;
+            }
+        }
+    }
+}

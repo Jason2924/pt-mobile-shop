@@ -94,7 +94,7 @@ body {
     }
     // Logo
     &__logo {
-        flex: content;
+        flex: initial;
     }
     &__logo-link {
         display: flex;
@@ -189,7 +189,7 @@ body {
     }
     // Icon
     &__icon {
-        flex: content;
+        flex: initial;
         justify-self: right;
     }
 }

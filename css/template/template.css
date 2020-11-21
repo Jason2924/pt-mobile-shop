@@ -105,9 +105,9 @@ body {
 }
 
 .header__logo {
-  -webkit-box-flex: content;
-      -ms-flex: content;
-          flex: content;
+  -webkit-box-flex: initial;
+      -ms-flex: initial;
+          flex: initial;
 }
 
 .header__logo-link {
@@ -224,9 +224,9 @@ body {
 }
 
 .header__icon {
-  -webkit-box-flex: content;
-      -ms-flex: content;
-          flex: content;
+  -webkit-box-flex: initial;
+      -ms-flex: initial;
+          flex: initial;
   -ms-grid-column-align: right;
       justify-self: right;
 }

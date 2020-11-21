@@ -19,6 +19,15 @@ function loadPage() {
 }
 
 function loadMenuData() {
+    const arrLink = document.location.pathname.split("/");
+    let page = "";
+    for (let i = 0; i < arrLink.length; i++) {
+        if (arrLink[i].includes(".html")) {
+            page = arrLink[i];
+            break;
+        }
+    }
+
     const menuBox = document.querySelector(".header__menu");
     let result = '<ul class="header__menu-parent">';
     for (let i = 0; i < menu.length; i++) {
@@ -30,8 +39,12 @@ function loadMenuData() {
 
     // Render parent menu
     function createParentMenu(p) {
+        let activeClass = "";
+        if (page === p.link) {
+            activeClass = " link--active";
+        }
         let result = '<li class="header__menu-parent-list">' +
-            '<a class="header__menu-parent-link link link--color-white link--capitalize" href="' + p.link + '">' +
+            '<a class="header__menu-parent-link link link--color-white link--capitalize' + activeClass + '" href="' + p.link + '">' +
             '<span>' + p.name + '</span>';
         if (p.child != null) {
             result += '<i class="header__menu-parent-arrow fas fa-caret-down"></i>' +
